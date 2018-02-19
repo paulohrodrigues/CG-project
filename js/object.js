@@ -21,7 +21,7 @@ class ObjectPredefinido{
                     [this.matriz[i][3]] 
                 ] 
             );
-            console.log(matrizPush);
+            // console.log(matrizPush);
             var a  = [
                 matrizPush[0][0],
                 matrizPush[1][0],
@@ -34,7 +34,8 @@ class ObjectPredefinido{
         }
 
         this.matriz=matrizLocal;
-        // console.log(matrizLocal);
+
+        console.log(matrizLocal);
 
     }
 
@@ -58,7 +59,7 @@ class ObjectPredefinido{
             }
             c.push(r);
         }
-        
+        console.log(c);
         return c;
     }
 
