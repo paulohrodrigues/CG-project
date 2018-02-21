@@ -20,11 +20,8 @@ onload=()=>{
     renderer.render(scene, camera);
 
 };
-
-
 var aplicarMatriz=((matrizParaAplicar)=>{
     scene = new THREE.Scene();
-    // obj = new ObjectPredefinido(scene);
     new Eixos(scene);
     obj.aplicarMatriz(matrizParaAplicar);     
     obj.draw(scene,renderer,camera);
@@ -44,29 +41,22 @@ document.getElementById("aplicar").addEventListener("click",()=>{
 });
 
 function rotationCamera(sentido){
-
     var mult=(sentido=="horario") ? -1: 1;
-
     var raiz = Math.pow(70,2)-Math.pow(camera.position.z,2);
-    // if(raiz>=0){
-        camera.position.z-=(0.5*mult);
-        camera.position.x= Math.sqrt( raiz );
-        camera.lookAt(new THREE.Vector3(0, 0, 0));
-        renderer.render(scene, camera);
-    // }
-
+    camera.position.z-=(0.5*mult);
+    camera.position.x= Math.sqrt( raiz );
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    renderer.render(scene, camera);
 }
-
-
 document.getElementById("body").addEventListener("keydown",(evento)=>{
     var key = event.keyCode;
-    if(key==37){    
+    console.log(key);
+    if(key==65){    
         rotationCamera("horario");
     }   
-    if(key==39){
+    if(key==68){
         rotationCamera("ante")
     }
-
 });
 
 document.getElementById("resetar").addEventListener("click",()=>{
